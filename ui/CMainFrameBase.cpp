@@ -57,12 +57,12 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
 
     m_staticText32 = new wxStaticText(this, wxID_ANY, wxT("Your Bitcoin Address:"), wxDefaultPosition, wxDefaultSize, 0);
     m_staticText32->Wrap(-1);
-    bSizer85->Add(m_staticText32, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_LEFT, 5);
+    bSizer85->Add(m_staticText32, 0, wxALIGN_CENTER_VERTICAL, 5);
 
     m_textCtrlAddress = new wxTextCtrl(this, wxID_TEXTCTRLADDRESS, wxEmptyString, wxDefaultPosition, wxSize(250,-1), wxTE_READONLY);
     m_textCtrlAddress->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_MENU));
 
-    bSizer85->Add(m_textCtrlAddress, 0, wxALIGN_CENTER_VERTICAL|wxLEFT, 5);
+    bSizer85->Add(m_textCtrlAddress, 0, wxALIGN_CENTER_VERTICAL, 5);
 
     m_buttonCopy = new wxButton(this, wxID_BUTTONCOPY, wxT("&Copy to Clipboard"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT);
     bSizer85->Add(m_buttonCopy, 0, wxALIGN_CENTER_VERTICAL, 5);
@@ -84,7 +84,7 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
 
     m_staticText41 = new wxStaticText(m_panel14, wxID_ANY, wxT("Balance:"), wxDefaultPosition, wxSize(-1,15), 0);
     m_staticText41->Wrap(-1);
-    bSizer66->Add(m_staticText41, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_TOP|wxBOTTOM|wxLEFT, 5);
+    bSizer66->Add(m_staticText41, 0, wxALIGN_CENTER_VERTICAL, 5);
 
     m_staticTextBalance = new wxStaticText(m_panel14, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(120,15), wxALIGN_RIGHT|wxST_NO_AUTORESIZE);
     m_staticTextBalance->Wrap(-1);
@@ -107,7 +107,7 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
     m_choiceFilter->SetSelection(0);
     m_choiceFilter->Hide();
 
-    bSizer3->Add(m_choiceFilter, 0, wxALIGN_BOTTOM|wxALIGN_TOP|wxRIGHT|wxLEFT, 5);
+    bSizer3->Add(m_choiceFilter, 0, wxALIGN_BOTTOM, 5);
 
     bSizer2->Add(bSizer3, 0, wxEXPAND, 5);
 
@@ -136,7 +136,7 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
     bSizer159 = new wxBoxSizer(wxVERTICAL);
 
     m_listCtrlEscrows = new wxListCtrl(m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_NO_SORT_HEADER|wxLC_REPORT);
-    bSizer159->Add(m_listCtrlEscrows, 1, wxEXPAND, 5);
+    bSizer159->Add(m_listCtrlEscrows, 1, wxALL, 5);
 
     m_panel9->SetSizer(bSizer159);
     m_panel9->Layout();
@@ -150,7 +150,7 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
     bSizer158 = new wxBoxSizer(wxVERTICAL);
 
     m_listCtrlOrdersSent = new wxListCtrl(m_panel8, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_NO_SORT_HEADER|wxLC_REPORT);
-    bSizer158->Add(m_listCtrlOrdersSent, 1, wxEXPAND, 5);
+    bSizer158->Add(m_listCtrlOrdersSent, 1, wxALL, 5);
 
     m_panel8->SetSizer(bSizer158);
     m_panel8->Layout();
@@ -213,29 +213,29 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
     this->Connect(m_menuHelpAbout->GetId(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(CMainFrameBase::OnMenuHelpAbout));
     this->Connect(wxID_BUTTONSEND, wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonSend));
     this->Connect(wxID_BUTTONRECEIVE, wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonAddressBook));
-    m_textCtrlAddress->Connect(wxEVT_KEY_DOWN, wxKeyEventHandler(CMainFrameBase::OnKeyDown), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_LEFT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_LEFT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_MIDDLE_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_MIDDLE_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_RIGHT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_RIGHT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_MOTION, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_LEFT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_MIDDLE_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_RIGHT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_LEAVE_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_ENTER_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_MOUSEWHEEL, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Connect(wxEVT_SET_FOCUS, wxFocusEventHandler(CMainFrameBase::OnSetFocusAddress), NULL, this);
-    m_buttonCopy->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonCopy), NULL, this);
-    m_button91->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonChange), NULL, this);
-    m_listCtrl->Connect(wxEVT_COMMAND_LIST_COL_BEGIN_DRAG, wxListEventHandler(CMainFrameBase::OnListColBeginDrag), NULL, this);
-    m_listCtrl->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedAllTransactions), NULL, this);
-    m_listCtrl->Connect(wxEVT_PAINT, wxPaintEventHandler(CMainFrameBase::OnPaintListCtrl), NULL, this);
-    m_listCtrlOrdersSent->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersSent), NULL, this);
-    m_listCtrlProductsSent->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedProductsSent), NULL, this);
-    m_listCtrlOrdersReceived->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersReceived), NULL, this);
+    m_textCtrlAddress->Connect(wxEVT_KEY_DOWN, wxKeyEventHandler(CMainFrameBase::OnKeyDown), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_LEFT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_LEFT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_MIDDLE_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_MIDDLE_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_RIGHT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_RIGHT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_MOTION, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_LEFT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_MIDDLE_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_RIGHT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_LEAVE_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_ENTER_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_MOUSEWHEEL, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Connect(wxEVT_SET_FOCUS, wxFocusEventHandler(CMainFrameBase::OnSetFocusAddress), nullptr, this);
+    m_buttonCopy->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonCopy), nullptr, this);
+    m_button91->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonChange), nullptr, this);
+    m_listCtrl->Connect(wxEVT_COMMAND_LIST_COL_BEGIN_DRAG, wxListEventHandler(CMainFrameBase::OnListColBeginDrag), nullptr, this);
+    m_listCtrl->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedAllTransactions), nullptr, this);
+    m_listCtrl->Connect(wxEVT_PAINT, wxPaintEventHandler(CMainFrameBase::OnPaintListCtrl), nullptr, this);
+    m_listCtrlOrdersSent->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersSent), nullptr, this);
+    m_listCtrlProductsSent->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedProductsSent), nullptr, this);
+    m_listCtrlOrdersReceived->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersReceived), nullptr, this);
 }
 
 CMainFrameBase::~CMainFrameBase(){
@@ -262,27 +262,27 @@ CMainFrameBase::~CMainFrameBase(){
     this->Disconnect(wxID_ANY, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(CMainFrameBase::OnMenuHelpAbout));
     this->Disconnect(wxID_BUTTONSEND, wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonSend));
     this->Disconnect(wxID_BUTTONRECEIVE, wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonAddressBook));
-    m_textCtrlAddress->Disconnect(wxEVT_KEY_DOWN, wxKeyEventHandler(CMainFrameBase::OnKeyDown), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_LEFT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_LEFT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_MIDDLE_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_MIDDLE_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_RIGHT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_RIGHT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_MOTION, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_LEFT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_MIDDLE_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_RIGHT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_LEAVE_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_ENTER_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_MOUSEWHEEL, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), NULL, this);
-    m_textCtrlAddress->Disconnect(wxEVT_SET_FOCUS, wxFocusEventHandler(CMainFrameBase::OnSetFocusAddress), NULL, this);
-    m_buttonCopy->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonCopy), NULL, this);
-    m_button91->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonChange), NULL, this);
-    m_listCtrl->Disconnect(wxEVT_COMMAND_LIST_COL_BEGIN_DRAG, wxListEventHandler(CMainFrameBase::OnListColBeginDrag), NULL, this);
-    m_listCtrl->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedAllTransactions), NULL, this);
-    m_listCtrl->Disconnect(wxEVT_PAINT, wxPaintEventHandler(CMainFrameBase::OnPaintListCtrl), NULL, this);
-    m_listCtrlOrdersSent->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersSent), NULL, this);
-    m_listCtrlProductsSent->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedProductsSent), NULL, this);
-    m_listCtrlOrdersReceived->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersReceived), NULL, this);
+    m_textCtrlAddress->Disconnect(wxEVT_KEY_DOWN, wxKeyEventHandler(CMainFrameBase::OnKeyDown), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_LEFT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_LEFT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_MIDDLE_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_MIDDLE_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_RIGHT_DOWN, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_RIGHT_UP, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_MOTION, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_LEFT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_MIDDLE_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_RIGHT_DCLICK, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_LEAVE_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_ENTER_WINDOW, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_MOUSEWHEEL, wxMouseEventHandler(CMainFrameBase::OnMouseEventsAddress), nullptr, this);
+    m_textCtrlAddress->Disconnect(wxEVT_SET_FOCUS, wxFocusEventHandler(CMainFrameBase::OnSetFocusAddress), nullptr, this);
+    m_buttonCopy->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonCopy), nullptr, this);
+    m_button91->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CMainFrameBase::OnButtonChange), nullptr, this);
+    m_listCtrl->Disconnect(wxEVT_COMMAND_LIST_COL_BEGIN_DRAG, wxListEventHandler(CMainFrameBase::OnListColBeginDrag), nullptr, this);
+    m_listCtrl->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedAllTransactions), nullptr, this);
+    m_listCtrl->Disconnect(wxEVT_PAINT, wxPaintEventHandler(CMainFrameBase::OnPaintListCtrl), nullptr, this);
+    m_listCtrlOrdersSent->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersSent), nullptr, this);
+    m_listCtrlProductsSent->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedProductsSent), nullptr, this);
+    m_listCtrlOrdersReceived->Disconnect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(CMainFrameBase::OnListItemActivatedOrdersReceived), nullptr, this);
 }

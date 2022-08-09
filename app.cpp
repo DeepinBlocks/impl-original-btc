@@ -3,7 +3,7 @@
 #include <wx/wx.h>
 #endif
 
-#include "CMainFrameBase.h"
+#include "ui/CMainFrameBase.h"
 
 class CMyApp : public wxApp {
 public:

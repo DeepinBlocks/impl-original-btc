@@ -1,34 +1,7 @@
 #ifndef BTC_CMAINFRAMEBASE_H
 #define BTC_CMAINFRAMEBASE_H
 
-#include <wx/string.h>
-#include <wx/bitmap.h>
-#include <wx/image.h>
-#include <wx/icon.h>
-#include <wx/menu.h>
-#include <wx/gdicmn.h>
-#include <wx/font.h>
-#include <wx/colour.h>
-#include <wx/settings.h>
-#include <wx/toolbar.h>
-#include <wx/statusbr.h>
-#include <wx/stattext.h>
-#include <wx/textctrl.h>
-#include <wx/button.h>
-#include <wx/sizer.h>
-#include <wx/panel.h>
-#include <wx/choice.h>
-#include <wx/listctrl.h>
-#include <wx/notebook.h>
-#include <wx/frame.h>
-#include <wx/html/htmlwin.h>
-#include <wx/dialog.h>
-#include <wx/statbmp.h>
-#include <wx/combobox.h>
-#include <wx/scrolwin.h>
-#include <wx/richtext/richtextctrl.h>
-#include <wx/treectrl.h>
-#include <wx/checkbox.h>
+#include "common.h"
 
 #define wxID_MAINFRAME 1000
 #define wxID_OPTIONSGENERATEBITCOINS 1001
