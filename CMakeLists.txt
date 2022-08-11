@@ -3,22 +3,22 @@ add_definitions(-D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__)
 project(bitcoin)
 
 add_executable(${PROJECT_NAME}
-        app.cpp
-        ui/CMainFrameBase.cpp
-        ui/CTxDetailDialogBase.cpp
-        ui/COptionsDialogBase.cpp
-        ui/CAboutDialogBase.cpp
-        ui/CSendDialogBase.cpp
-        ui/CSendingDialogBase.cpp
-        ui/CYourAddressDialogBase.cpp
-        ui/CAddressBookDialogBase.cpp
-        ui/CProductsDialogBase.cpp
-        ui/CEditProductDialogBase.cpp
-        ui/CViewProductDialogBase.cpp
-        ui/CViewOrderDialogBase.cpp
-        ui/CEditReviewDialogBase.cpp
-        ui/CPokerLobbyDialogBase.cpp
-        ui/CGetTextFromUserDialogBase.cpp ui/CPokerDialogBase.cpp)
+        src/app.cpp
+        src/ui/CMainFrameBase.cpp
+        src/ui/CTxDetailDialogBase.cpp
+        src/ui/COptionsDialogBase.cpp
+        src/ui/CAboutDialogBase.cpp
+        src/ui/CSendDialogBase.cpp
+        src/ui/CSendingDialogBase.cpp
+        src/ui/CYourAddressDialogBase.cpp
+        src/ui/CAddressBookDialogBase.cpp
+        src/ui/CProductsDialogBase.cpp
+        src/ui/CEditProductDialogBase.cpp
+        src/ui/CViewProductDialogBase.cpp
+        src/ui/CViewOrderDialogBase.cpp
+        src/ui/CEditReviewDialogBase.cpp
+        src/ui/CPokerLobbyDialogBase.cpp
+        src/ui/CGetTextFromUserDialogBase.cpp src/ui/CPokerDialogBase.cpp)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
         pthread
