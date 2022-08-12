@@ -29,13 +29,13 @@ CAboutDialogBase::CAboutDialogBase(wxWindow* parent,
 
     m_staticText40 = new wxStaticText(this, wxID_ANY, wxT("Bitcoin "), wxDefaultPosition, wxDefaultSize, 0);
     m_staticText40->Wrap(-1);
-    m_staticText40->SetFont(wxFont(10, 74, 90, 92, false, wxT("Tahoma")));
+    m_staticText40->SetFont(wxFont(10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
 
     bSizer64->Add(m_staticText40, 0, wxALIGN_BOTTOM, 5);
 
     m_staticTextVersion = new wxStaticText(this, wxID_ANY, wxT("version"), wxDefaultPosition, wxDefaultSize, 0);
     m_staticTextVersion->Wrap(-1);
-    m_staticTextVersion->SetFont(wxFont(10, 74, 90, 90, false, wxT("Tahoma")));
+    m_staticTextVersion->SetFont(wxFont(10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
 
     bSizer64->Add(m_staticTextVersion, 0, wxALIGN_BOTTOM, 5);
 

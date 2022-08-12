@@ -37,7 +37,7 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
     m_toolBar = this->CreateToolBar(wxTB_FLAT|wxTB_HORZ_TEXT, wxID_ANY);
     m_toolBar->SetToolBitmapSize(wxSize(20,20));
     m_toolBar->SetToolSeparation(1);
-    m_toolBar->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxEmptyString));
+    m_toolBar->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
 
     m_toolBar->AddTool(wxID_BUTTONSEND, wxT("&Send Coins"), wxBitmap(wxT("../rc/send20.bmp"), wxBITMAP_TYPE_RESOURCE), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
     m_toolBar->AddTool(wxID_BUTTONRECEIVE, wxT("&Address Book"), wxBitmap(wxT("../rc/addressbook20.bmp"), wxBITMAP_TYPE_RESOURCE), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
@@ -88,7 +88,7 @@ CMainFrameBase::CMainFrameBase(wxWindow* parent, wxWindowID id, const wxString& 
 
     m_staticTextBalance = new wxStaticText(m_panel14, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(120,15), wxALIGN_RIGHT|wxST_NO_AUTORESIZE);
     m_staticTextBalance->Wrap(-1);
-    m_staticTextBalance->SetFont(wxFont(8, 70, 90, 90, false, wxEmptyString));
+    m_staticTextBalance->SetFont(wxFont(8, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
     m_staticTextBalance->SetBackgroundColour(wxColour(240, 240, 240));
 
     bSizer66->Add(m_staticTextBalance, 0, wxALIGN_CENTER_VERTICAL, 5);

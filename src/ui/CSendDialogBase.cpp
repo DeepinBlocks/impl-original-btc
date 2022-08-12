@@ -63,7 +63,7 @@ CSendDialogBase::CSendDialogBase(wxWindow* parent,
 
     m_textCtrlAmount = new wxTextCtrl(this, wxID_TEXTCTRLAMOUNT, wxEmptyString, wxDefaultPosition, wxSize(145,-1), 0);
     m_textCtrlAmount->SetMaxLength(20);
-    m_textCtrlAmount->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxEmptyString));
+    m_textCtrlAmount->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
 
     fgSizer1->Add(m_textCtrlAmount, 0, wxALIGN_CENTER_VERTICAL, 5);
 
@@ -120,7 +120,7 @@ CSendDialogBase::CSendDialogBase(wxWindow* parent,
     bSizer23->Add(0, 0, 1, wxEXPAND, 5);
 
     m_buttonSend = new wxButton(this, wxID_BUTTONSEND, wxT("&Send"), wxDefaultPosition, wxSize(-1,-1), 0);
-    m_buttonSend->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), 70, 90, 90, false, wxEmptyString));
+    m_buttonSend->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
     m_buttonSend->SetMinSize(wxSize(85,25));
 
     bSizer23->Add(m_buttonSend, 0, wxALL, 5);
