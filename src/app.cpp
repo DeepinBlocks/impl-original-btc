@@ -11,7 +11,7 @@ public:
 };
 
 bool CMyApp::OnInit() {
-    CMainFrameBase* frame = new CMainFrameBase(nullptr);
+    auto frame = new CMainFrameBase(nullptr);
     frame->Show(true);
     return true;
 }
