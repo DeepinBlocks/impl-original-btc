@@ -3,7 +3,7 @@
 #include <wx/wx.h>
 #endif
 
-#include "ui/CMainFrameBase.h"
+#include "ui/MainFrameBase.h"
 
 class CMyApp : public wxApp {
 public:
@@ -11,7 +11,7 @@ public:
 };
 
 bool CMyApp::OnInit() {
-    auto frame = new CMainFrameBase(nullptr);
+    auto frame = new MainFrameBase(nullptr);
     frame->Show(true);
     return true;
 }
