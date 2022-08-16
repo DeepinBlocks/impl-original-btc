@@ -31,13 +31,25 @@ add_executable(${PROJECT_NAME}
         src/ui/GetTextFromUserDialogBase.cpp
         src/ui/PokerDialogBase.cpp)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC
-        pthread
-        wx_gtk3u_richtext-3.2
-        wx_gtk3u_xrc-3.2
-        wx_gtk3u_html-3.2
-        wx_gtk3u_qa-3.2
-        wx_gtk3u_core-3.2
-        wx_baseu_xml-3.2
-        wx_baseu_net-3.2
-        wx_baseu-3.2)
+if (APPLE)
+    target_link_libraries(${PROJECT_NAME} PUBLIC
+            wx_osx_cocoau_gtk3u_richtext-3.2
+            wx_osx_cocoau_gtk3u_xrc-3.2
+            wx_osx_cocoau_gtk3u_html-3.2
+            wx_osx_cocoau_gtk3u_qa-3.2
+            wx_osx_cocoau_gtk3u_core-3.2
+            wx_osx_cocoau_baseu_xml-3.2
+            wx_osx_cocoau_baseu_net-3.2
+            wx_osx_cocoau_baseu-3.2)
+elseif(WIN32)
+else()
+    target_link_libraries(${PROJECT_NAME} PUBLIC
+            wx_gtk3u_richtext-3.2
+            wx_gtk3u_xrc-3.2
+            wx_gtk3u_html-3.2
+            wx_gtk3u_qa-3.2
+            wx_gtk3u_core-3.2
+            wx_baseu_xml-3.2
+            wx_baseu_net-3.2
+            wx_baseu-3.2)
+endif()
