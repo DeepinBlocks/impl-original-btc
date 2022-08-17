@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-class OptionsDialogBase : wxDialog {
+class OptionsDialogBase : public wxDialog {
 public:
     OptionsDialogBase(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Options"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize(500, 261), long style = wxDEFAULT_DIALOG_STYLE);
     ~OptionsDialogBase();
