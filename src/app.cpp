@@ -12,6 +12,7 @@ public:
 
 bool CMyApp::OnInit() {
     auto frame = new MainFrameBase(nullptr);
+    frame->SetIcon(wxIcon(wxT("res/bitcoin.ico")));
     frame->Show(true);
     return true;
 }
