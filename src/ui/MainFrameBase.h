@@ -58,6 +58,7 @@
 
 
 class MainFrameBase: public wxFrame {
+protected:
     wxMenuBar* m_menubar;
     wxMenu* m_menuFile;
     wxMenu* m_menuHelp;

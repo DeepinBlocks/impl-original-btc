@@ -1,7 +1,7 @@
-#include "TxDetailDialogBase.h"
+#include "TxDetailsDialogBase.h"
 
 
-CTxDetailsDialogBase::CTxDetailsDialogBase(wxWindow* parent,
+TxDetailsDialogBase::TxDetailsDialogBase(wxWindow* parent,
                                          wxWindowID id,
                                          const wxString& title,
                                          const wxPoint& pos,
@@ -32,10 +32,10 @@ CTxDetailsDialogBase::CTxDetailsDialogBase(wxWindow* parent,
     this->Layout();
 
     // Connect Events
-    m_buttonOK->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CTxDetailsDialogBase::OnButtonOK), nullptr, this);
+    m_buttonOK->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(TxDetailsDialogBase::OnButtonOK), nullptr, this);
 }
 
-CTxDetailsDialogBase::~CTxDetailsDialogBase() {
+TxDetailsDialogBase::~TxDetailsDialogBase() {
     // Disconnect Events
-    m_buttonOK->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(CTxDetailsDialogBase::OnButtonOK), NULL, this);
+    m_buttonOK->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(TxDetailsDialogBase::OnButtonOK), NULL, this);
 }

@@ -15,7 +15,7 @@ project(bitcoin)
 add_executable(${PROJECT_NAME}
         src/app.cpp
         src/ui/MainFrameBase.cpp
-        src/ui/TxDetailDialogBase.cpp
+        src/ui/TxDetailsDialogBase.cpp
         src/ui/OptionsDialogBase.cpp
         src/ui/AboutDialogBase.cpp
         src/ui/SendDialogBase.cpp
@@ -29,7 +29,18 @@ add_executable(${PROJECT_NAME}
         src/ui/EditReviewDialogBase.cpp
         src/ui/PokerLobbyDialogBase.cpp
         src/ui/GetTextFromUserDialogBase.cpp
-        src/ui/PokerDialogBase.cpp)
+        src/ui/PokerDialogBase.cpp
+        src/ui/MainFrame.cpp
+        src/ui/TxDetailsDialog.cpp
+        src/ui/OptionsDialog.cpp
+        src/ui/ui.h src/ui/ui.cpp
+        src/WalletTx.cpp
+        src/MerkleTx.cpp
+        src/Transaction.cpp
+        src/TxIn.cpp
+        src/TxOut.cpp
+        src/CScript.cpp
+        src/BigNum.cpp)
 
 if (APPLE)
     target_link_libraries(${PROJECT_NAME} PUBLIC
