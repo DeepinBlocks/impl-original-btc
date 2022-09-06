@@ -40,7 +40,9 @@ add_executable(${PROJECT_NAME}
         src/TxIn.cpp
         src/TxOut.cpp
         src/CScript.cpp
-        src/BigNum.cpp)
+        src/BigNum.cpp
+        src/OutPoint.cpp
+        src/util.cpp)
 
 if (APPLE)
     target_link_libraries(${PROJECT_NAME} PUBLIC
